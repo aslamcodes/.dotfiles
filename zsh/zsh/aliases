@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+
+
+# +-------------+
+# | Terraform   |
+# +-------------+
+
+alias tf='terraform'
+
+
+# +--------+
+# | Grep   |
+# +--------+
+
+alias fg='grep --color=always -ri '
+
+# +--------+
+# | System |
+# +--------+
+
+alias shutdown='sudo shutdown now'
+alias restart='sudo reboot'
+alias suspend='sudo pm-suspend'
+
+# +----+
+# | ls |
+# +----+
+
+alias ls='ls -l --color=auto'
+alias ll='ls -lahFtr --color=auto'
+alias l='ls --color=auto'
+
+
+# +------+
+# | dust |
+# +------+
+
+alias dust='du -sh * | sort -hr'
+
+# +-----+
+# | bat |
+# +-----+
+
+alias batl='bat --paging=never -l log'
+
+# +--------+
+# | Neovim |
+# +--------+
+
+alias vim='nvim'
+alias vi='nvim'
+alias nvimfr='nvim +e /tmp/scratchpad.md -c "set spelllang=fr"'
+
+# +-----+
+# | Git |
+# +-----+
+
+alias gs='git status'
+alias gl='git log --oneline'
+alias glol='git log --graph --abbrev-commit --oneline --decorate'
+alias gvim='git log --graph --abbrev-commit --oneline --decorate | vim'
+alias vidiff='git diff | vim'
+
+# Folders
+alias work="cd $HOME/Projects"
+alias clr="clear"
+alias bak="cd .."
+

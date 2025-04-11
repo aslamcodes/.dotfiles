@@ -1,0 +1,2 @@
+- [ ] Setup a Startup Screen
+- [ ] Prime LSP

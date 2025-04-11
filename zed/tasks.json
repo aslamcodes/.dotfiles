@@ -1,0 +1,12 @@
+[
+  {
+    "label": "Run Federated CLI",
+    "command": "cd ~/Projects/Greenway/Gerrit/federated-cli && source venv/bin/activate && python aws_federated_cli.py",
+    "shell": "system"
+  },
+  {
+    "label": "Terraform",
+    "command": "tf apply",
+    "shell": "system"
+  }
+]

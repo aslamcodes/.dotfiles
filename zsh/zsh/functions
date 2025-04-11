@@ -1,0 +1,29 @@
+nvim() {
+  if [ -d "$1" ]; then
+    local old_dir
+    old_dir="$(pwd)"
+    cd "$1" && command nvim .
+    cd "$old_dir"
+  else
+    command nvim "$@"
+  fi
+}
+
+function git() {
+    if [ "$1" = "add" ]; then
+        command git add "${@:2}"
+        git status
+    else
+        command git "$@"
+    fi
+}
+
+function ff() {
+    find . -name "$1" 2>/dev/null; 
+}
+
+function gitclean() {
+    command git restore --staged *
+    command git restore *
+    command git clean -f
+}
