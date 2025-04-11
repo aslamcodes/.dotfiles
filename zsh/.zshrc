@@ -12,11 +12,11 @@ bindkey -v
 bindkey '\e[A' history-search-backward
 bindkey '\e[B' history-search-forward
 
-source "$HOME/zsh/aliases"
-source "$HOME/zsh/prompt"
-source "$HOME/zsh/functions"
+source "$HOME/.config/zsh/aliases"
+source "$HOME/.config/zsh/prompt"
+source "$HOME/.config/zsh/functions"
 
-source "$HOME/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
-fpath=("$HOME/zsh/plugins/zsh-completions/src" $fpath)
+source "$HOME/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+fpath=("$HOME/.config/zsh/plugins/zsh-completions/src" $fpath)
 
 autoload -U compinit; compinit
