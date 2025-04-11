@@ -1,9 +1,10 @@
 # Autobots Rollout 🤖
 
 echo "Deleting junks"
-rm -rf ~/.config/nvim 
-rm -rf ~/.config/zed
-rm -rf ~/.config/zsh
+rm -rf $HOME/.config/nvim 
+rm -rf $HOME/.config/zed
+rm -rf $HOME/.config/zsh
+rm $HOME/.zshrc
 
 # Nvim 
 ln -s $HOME/.dotfiles/nvim $HOME/.config/nvim
@@ -17,3 +18,5 @@ echo "Zsh can now Zsh w plugins"
 # ZED
 ln -s $HOME/.dotfiles/zed $HOME/.config/zed
 echo "Zed for 'Take it slow guys(soydevs)'"
+
+source $HOME/.zshrc
