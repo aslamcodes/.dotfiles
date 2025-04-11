@@ -1,0 +1,7 @@
+macos-titlebar-style = hidden
+font-size = 16
+window-theme = system
+background-opacity = 0.4
+background-blur-radius = 20
+
+

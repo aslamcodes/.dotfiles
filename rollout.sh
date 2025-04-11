@@ -19,4 +19,7 @@ echo "Zsh can now Zsh w plugins"
 ln -s $HOME/.dotfiles/zed $HOME/.config/zed
 echo "Zed for 'Take it slow guys(soydevs)'"
 
+# Ghostty
+ln -s $HOME/.dotfiles/ghostty $HOME/.config/ghostty
+
 source $HOME/.zshrc
