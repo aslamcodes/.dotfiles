@@ -1,13 +1,18 @@
 # Autobots Rollout 🤖
 
 echo "Deleting junks"
-rm -rf $HOME/.config/nvim 
-rm -rf $HOME/.config/zed
-rm -rf $HOME/.config/zsh
+rm -rf $HOME/.config/
 rm $HOME/.zshrc
 
 # Nvim 
 ln -s $HOME/.dotfiles/nvim $HOME/.config/nvim
+
+## LSPs 
+echo "brewing up LSPs"
+brew install terraform-ls  >/dev/null 2>&1
+brew install gopls >/dev/null 2>&1
+brew install luals >/dev/null 2>&1
+
 echo "You can say 'I use nvim, btw'"
 
 # ZSH
@@ -21,5 +26,3 @@ echo "Zed for 'Take it slow guys(soydevs)'"
 
 # Ghostty
 ln -s $HOME/.dotfiles/ghostty $HOME/.config/ghostty
-
-source $HOME/.zshrc
