@@ -1,7 +1,14 @@
 # Autobots Rollout 🤖
+
 echo "Deleting junks"
 rm -rf $HOME/.config/*
 rm $HOME/.zshrc
+
+# Brews & Installs
+echo "Getting the ingredients"
+brew install nvim >/dev/null 2>&1
+brew install tmux >/dev/null 2>&1
+open https://zed.dev/download
 
 # Nvim 
 ln -s $HOME/.dotfiles/nvim $HOME/.config/nvim
@@ -21,6 +28,10 @@ echo "Zsh can now Zsh w plugins"
 # ZED
 ln -s $HOME/.dotfiles/zed $HOME/.config/zed
 echo "Zed for 'Take it slow guys(soydevs)'"
+
+# TMUX
+ln -s $HOME/.dotfiles/tmux $HOME/.config/tmux
+ln -s $HOME/.dotfiles/tmux/.tmux.conf $HOME/.tmux.conf
 
 # Ghostty
 echo "Ghostty 👻"
