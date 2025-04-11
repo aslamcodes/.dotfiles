@@ -1,5 +1,4 @@
 # Autobots Rollout 🤖
-
 echo "Deleting junks"
 rm -rf $HOME/.config/*
 rm $HOME/.zshrc
@@ -7,7 +6,6 @@ rm $HOME/.zshrc
 # Nvim 
 ln -s $HOME/.dotfiles/nvim $HOME/.config/nvim
 
-## LSPs 
 echo "Brewing up LSPs"
 brew install terraform-ls  >/dev/null 2>&1
 brew install gopls >/dev/null 2>&1
@@ -26,5 +24,7 @@ echo "Zed for 'Take it slow guys(soydevs)'"
 
 # Ghostty
 echo "Ghostty 👻"
-brew install --cask ghostty
+brew install --cask ghostty  >/dev/null 2>&1
 ln -s $HOME/.dotfiles/ghostty $HOME/.config/ghostty
+
+echo "All Set"
