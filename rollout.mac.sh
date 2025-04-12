@@ -33,7 +33,7 @@ echo "Zsh can now Zsh w plugins"
 
 # ZED
 ln -s $HOME/.dotfiles/zed $HOME/.config/zed
-echo "Zed for 'Take it slow guys(soydevs)'"
+echo "Zed for 'Take it slow guys and for soydevs'"
 
 # TMUX
 ln -s $HOME/.dotfiles/tmux $HOME/.config/tmux
