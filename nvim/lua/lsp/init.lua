@@ -13,11 +13,23 @@ M.autocmds.setup_auto_cmds()
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
+local tfcapabilites = vim.lsp.protocol.make_client_capabilities()
+tfcapabilites.textDocument.completion.completionItem.snippetSupport = true
+
 M.lsp.setup_lsp('terraform-ls', {
-    cmd = {'terraform-ls', 'serve'},
+    cmd = { 'terraform-ls', 'serve' },
     filetypes = { 'tf', 'terraform' },
+    root_markers = { '.terraform', '.git', '.tflint.hcl' },
     settings = {},
-    capabilities = capabilities
+    capabilities = tfcapabilites
+})
+
+M.lsp.setup_lsp('tflint', {
+    cmd = { 'tflint', '--langserver' },
+    filetypes = { 'tf', 'terraform' },
+    root_markers = { '.terraform', '.git', '.tflint.hcl' },
+    settings = {},
+    capabilities = tfcapabilites
 })
 
 M.lsp.setup_lsp('luals', {
@@ -38,8 +50,7 @@ M.lsp.setup_lsp('luals', {
 })
 
 M.lsp.setup_lsp('gopls', {
-    cmd = {'gopls'},
+    cmd = { 'gopls' },
     filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
     root_markers = { 'go.mod', 'go.work' }
 })
-

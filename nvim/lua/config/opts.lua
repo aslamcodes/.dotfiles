@@ -26,8 +26,8 @@ vim.opt.backup = false            -- Disable backup file
 
 vim.opt.scrolloff = 8             -- Keep cursor 8 lines from top/bottom
 vim.opt.sidescrolloff = 8         -- Keep cursor 8 columns from sides
+vim.opt.scroll = 10
 vim.opt.incsearch = true
-
 vim.opt.signcolumn = 'yes'
 
 vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
