@@ -1,5 +1,11 @@
 return {
     {
+        'MeanderingProgrammer/render-markdown.nvim',
+        dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
+        ft = "markdown",
+        opts = {},
+    },
+    {
         "folke/noice.nvim",
         event = "VeryLazy",
         opts = {
@@ -7,7 +13,13 @@ return {
         config = function()
             require("notify").setup({
                 background_colour = "#000000",
+                render = "wrapped-compact",
+                max_width = 100,
+                stages = "static",
+                timeout = 1500,
+                top_down = true
             })
+
             require("noice").setup({
                 lsp = {
                     -- override markdown rendering so that **cmp** and other plugins use **Treesitter**

@@ -2,7 +2,7 @@ macos-titlebar-style = hidden
 font-size = 16
 window-theme = system
 background-opacity = 0
-background-blur-radius = 20
+background-blur-radius = 0
 font-family = "JetBrains Mono"
 
 

@@ -1,2 +1,9 @@
+- [ ] Open file on tree with a keystroke
+- [ ] Alias for greenway ammend and commit
+- [ ] rename a file to folder forcefully on nvim tree
+- [ ] Code folding on nvim based on symbols
+- [ ] Telescope and git integration
+- [ ] Setup default micros
+- [ ] Path Intellelicense
+- [ ] Max LSP
 - [ ] Setup a Startup Screen
-- [ ] Prime LSP

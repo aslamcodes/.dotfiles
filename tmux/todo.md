@@ -1,0 +1,1 @@
+- [ ] Setup sessionizer kind of thing 

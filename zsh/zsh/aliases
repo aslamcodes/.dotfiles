@@ -62,7 +62,9 @@ alias gvim='git log --graph --abbrev-commit --oneline --decorate | vim'
 alias vidiff='git diff | vim'
 
 # Folders
-alias work="cd $HOME/Projects"
-alias clr="clear"
-alias bak="cd .."
-
+alias int='cd $HOME/projects/greenway/iac/intergy'
+alias ps='cd $HOME/projects/greenway/iac/primesuite'
+alias md='cd $HOME/projects/greenway/iac/mediadent'
+alias mm='cd $HOME/projects/greenway/iac/medman'
+alias auth='cd $HOME/projects/greenway/iac/authoring'
+alias ds='cd $HOME/projects/greenway/iac/dirserv'
