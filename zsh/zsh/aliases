@@ -68,3 +68,6 @@ alias md='cd $HOME/projects/greenway/iac/mediadent'
 alias mm='cd $HOME/projects/greenway/iac/medman'
 alias auth='cd $HOME/projects/greenway/iac/authoring'
 alias ds='cd $HOME/projects/greenway/iac/dirserv'
+alias root='cd $HOME/projects/'
+alias gw='cd $HOME/projects/greenway'
+
