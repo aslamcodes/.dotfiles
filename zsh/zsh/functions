@@ -19,7 +19,7 @@ function git() {
 }
 
 function ff() {
-    find . -name "$1" 2>/dev/null; 
+    find ~+ -type f -name "$1" 2>/dev/null; 
 }
 
 function gitclean() {

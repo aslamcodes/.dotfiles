@@ -7,3 +7,5 @@
 - [ ] Path Intellelicense
 - [ ] Max LSP
 - [ ] Setup a Startup Screen
+- [ ] Readonly nvim
+- [ ] Sessioniser like thing to switch between projects, with active buffers

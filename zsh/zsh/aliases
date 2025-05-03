@@ -70,4 +70,8 @@ alias auth='cd $HOME/projects/greenway/iac/authoring'
 alias ds='cd $HOME/projects/greenway/iac/dirserv'
 alias root='cd $HOME/projects/'
 alias gw='cd $HOME/projects/greenway'
+alias poc='cd $HOME/projects/poc'
 
+alias mv='mv -v'
+
+alias todo='(cd $HOME/projects && ff todo.md) | xargs nvim'
