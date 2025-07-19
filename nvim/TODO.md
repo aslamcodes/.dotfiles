@@ -1,13 +1,10 @@
-- [ ] Open file on tree with a keystroke
+- [x] Open file on tree with a keystroke
 - [ ] Alias for greenway ammend and commit
-- [ ] rename a file to folder forcefully on nvim tree
-- [ ] Code folding on nvim based on symbols
-- [ ] Telescope and git integration
+- [ ] Code folding on nvim 
+- [x] Telescope and git integration
 - [ ] Setup default micros
-- [ ] Path Intellelicense
-- [ ] Max LSP
+- [x] Path Intellelicense
 - [ ] Setup a Startup Screen
-- [ ] Readonly nvim
-- [ ] Sessioniser like thing to switch between projects, with active buffers
+- [x] Readonly nvim -R
 - [ ] The replace and clipboard changes issue
-- [ ] Scroll bar support, probably mini-map
+- [x] Scroll bar support, probably mini-map

@@ -1,66 +1,44 @@
 return {
     {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        opts = {
+            scope = { enabled = true },
+        },
+    },
+    {
+        "kevinhwang91/nvim-hlslens",
+        config = function()
+            require('hlslens').setup()
+        end
+    },
+    {
+        "petertriho/nvim-scrollbar",
+        dependencies = { 'lewis6991/gitsigns.nvim', 'kevinhwang91/nvim-hlslens' },
+        config = function()
+            require('scrollbar').setup({
+                handlers = {
+                    cursor = false,
+                    diagnostic = true,
+                    gitsigns = true,
+                    search = true,
+                },
+                handle = {
+                    text = " ",
+                    blend = 30,                 -- Integer between 0 and 100. 0 for fully opaque and 100 to full transparent. Defaults to 30.
+                    color = "#5c6370",
+                    color_nr = nil,             -- cterm
+                    highlight = "CursorColumn",
+                    hide_if_all_visible = true, -- Hides handle if all lines are visible
+                },
+            })
+        end
+    },
+    {
         'MeanderingProgrammer/render-markdown.nvim',
         dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
         ft = "markdown",
         opts = {},
-    },
-    {
-        "folke/noice.nvim",
-        event = "VeryLazy",
-        opts = {
-        },
-        config = function()
-            require("notify").setup({
-                background_colour = "#000000",
-                render = "wrapped-compact",
-                max_width = 100,
-                stages = "static",
-                timeout = 1500,
-                top_down = true
-            })
-
-            require("noice").setup({
-                lsp = {
-                    -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
-                    override = {
-                        ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-                        ["vim.lsp.util.stylize_markdown"] = true,
-                        ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
-                    },
-                },
-                -- you can enable a preset for easier configuration
-                presets = {
-                    bottom_search = true,         -- use a classic bottom cmdline for search
-                    command_palette = true,       -- position the cmdline and popupmenu together
-                    long_message_to_split = true, -- long messages will be sent to a split
-                    inc_rename = false,           -- enables an input dialog for inc-rename.nvim
-                    lsp_doc_border = false,       -- add a border to hover docs and signature help
-                },
-            })
-        end,
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-            "rcarriga/nvim-notify",
-        }
-    },
-    {
-        "christoomey/vim-tmux-navigator",
-        cmd = {
-            "TmuxNavigateLeft",
-            "TmuxNavigateDown",
-            "TmuxNavigateUp",
-            "TmuxNavigateRight",
-            "TmuxNavigatePrevious",
-            "TmuxNavigatorProcessList",
-        },
-        keys = {
-            { "<c-h>",  "<cmd><C-U>TmuxNavigateLeft<cr>" },
-            { "<c-j>",  "<cmd><C-U>TmuxNavigateDown<cr>" },
-            { "<c-k>",  "<cmd><C-U>TmuxNavigateUp<cr>" },
-            { "<c-l>",  "<cmd><C-U>TmuxNavigateRight<cr>" },
-            { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
-        },
     },
     {
         'lewis6991/gitsigns.nvim',
@@ -82,6 +60,12 @@ return {
         },
         config = function()
             require('nvim-tree').setup({
+                view = {
+                    auto_resize = true
+                },
+                update_focused_file = {
+                    enable = true,
+                },
                 actions = {
                     open_file = {
                         quit_on_open = true
@@ -91,44 +75,54 @@ return {
         end
     },
     {
-        "hrsh7th/nvim-cmp",
-        event = "InsertEnter",
-        dependencies = {
-            'L3MON4D3/LuaSnip',
-            'saadparwaiz1/cmp_luasnip',
-            'hrsh7th/cmp-nvim-lsp',
-            'hrsh7th/cmp-buffer',
-            'hrsh7th/cmp-path',
-        },
-        config = function()
-            local cmp = require("cmp")
+        {
+            "hrsh7th/nvim-cmp",
+            event = "InsertEnter",
+            dependencies = {
+                "L3MON4D3/LuaSnip",
+                "saadparwaiz1/cmp_luasnip",
+                "hrsh7th/cmp-nvim-lsp",
+                "hrsh7th/cmp-buffer",
+                "hrsh7th/cmp-path",
+            },
+            config = function()
+                local cmp = require("cmp")
+                local luasnip = require("luasnip")
 
-            cmp.setup({
-                snippet = {
-                    expand = function(args)
-                        require('luasnip').lsp_expand(args.body)
-                    end
-                },
-                window = {
-                    completion = cmp.config.window.bordered(),
-                    documentation = cmp.config.window.bordered(),
-                },
-                mapping = cmp.mapping.preset.insert({
-                    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-                    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-                    ['<C-Space>'] = cmp.mapping.complete(),
-                    ['<C-e>'] = cmp.mapping.abort(),
-                    ['<C-y>'] = cmp.mapping.confirm { select = true },
-                }),
-                sources = cmp.config.sources(
-                    {
-                        { name = 'nvim_lsp' },
-                        { name = 'luasnip' },
+                cmp.setup({
+                    snippet = {
+                        expand = function(args)
+                            luasnip.lsp_expand(args.body)
+                        end,
                     },
-                    {
-                        { name = 'buffer' },
-                    })
-            })
-        end,
+                    window = {
+                        completion = cmp.config.window.bordered(),
+                        documentation = cmp.config.window.bordered(),
+                    },
+                    mapping = cmp.mapping.preset.insert({
+                        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+                        ["<C-f>"] = cmp.mapping.scroll_docs(4),
+                        ["<C-Space>"] = cmp.mapping.complete(),
+                        ["<C-e>"] = cmp.mapping.abort(),
+                        ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+                    }),
+                    sources = cmp.config.sources({
+                        { name = "nvim_lsp", priority = 1000 },
+                        { name = "path",     priority = 750 },
+                        { name = "luasnip",  priority = 700 },
+                    }, {
+                        { name = "buffer", priority = 500 },
+                    }),
+                })
+
+                -- Optional: enable path completion in command line mode
+                cmp.setup.cmdline(":", {
+                    mapping = cmp.mapping.preset.cmdline(),
+                    sources = {
+                        { name = "path" }
+                    },
+                })
+            end,
+        }
     }
 }

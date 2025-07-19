@@ -49,7 +49,8 @@ alias batl='bat --paging=never -l log'
 
 alias vim='nvim'
 alias vi='nvim'
-alias nvimfr='nvim +e /tmp/scratchpad.md -c "set spelllang=fr"'
+alias rvim='nvim -R'
+alias nvimfr='nvim +e /tmp/scratchpad.md'
 
 # +-----+
 # | Git |
@@ -78,3 +79,4 @@ alias mv='mv -v'
 alias todo='(cd $HOME/projects && ff todo.md) | xargs nvim'
 
 alias s3browse='docker run --rm -it -v ~/.aws:/root/.aws:ro plazzari/s3-fuzzy-viewer:latest'
+
