@@ -27,3 +27,9 @@ function gitclean() {
     command git restore *
     command git clean -f
 }
+
+function fedcli() {
+    source ~/projects/greenway/artifacts/federated-cli/venv/bin/activate
+    command ~/projects/greenway/artifacts/federated-cli/venv/bin/python ~/projects/greenway/artifacts/federated-cli/aws_federated_cli.py
+    deactivate
+} 

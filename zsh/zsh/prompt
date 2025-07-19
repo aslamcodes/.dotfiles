@@ -1,30 +1,3 @@
-focus_now() {
-  local HOUR MIN TOTAL_MIN
-  HOUR=$(date +%H)
-  MIN=$(date +%M)
-  TOTAL_MIN=$((10#$HOUR * 60 + 10#$MIN))
-
-  if (( TOTAL_MIN >= 270 && TOTAL_MIN < 330 )); then
-    echo "[A1: Fajr]"
-  elif (( TOTAL_MIN >= 330 && TOTAL_MIN < 390 )); then
-    echo "[A2: Quran]"
-  elif (( TOTAL_MIN >= 390 && TOTAL_MIN < 450 )); then
-    echo "[A4: Workout]"
-  elif (( TOTAL_MIN >= 450 && TOTAL_MIN < 630 )); then
-    echo "[A5/A7: Cert/Side]"
-  elif (( TOTAL_MIN >= 660 && TOTAL_MIN < 1140 )); then
-    echo "[A6: Office Work]"
-  elif (( TOTAL_MIN >= 1140 && TOTAL_MIN < 1200 )); then
-    echo "[A3: Night Prayer]"
-  elif (( TOTAL_MIN >= 1200 && TOTAL_MIN < 1260 )); then
-    echo "[A8: Ground Work]"
-  elif (( TOTAL_MIN >= 1260 && TOTAL_MIN < 1320 )); then
-    echo "[A7: Wind Down]"
-  else
-    echo "[Rest / Sleep]"
-  fi
-}
-
 git_prompt_status() {
   local INDEX STATUS
 
@@ -130,7 +103,7 @@ prompt_purification_setup() {
     ZSH_THEME_GIT_PROMPT_AHEAD="%B%F{green}%f%b "
 
     prompt_git_branch
-    RPROMPT='$(focus_now) $(prompt_git_info) $(git_prompt_status)'
+    RPROMPT='$(prompt_git_info) $(git_prompt_status)'
     PROMPT=$' %F{white}%~%B%F{blue}>%f%b '
 }
 

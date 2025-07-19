@@ -16,10 +16,10 @@ map('', '<right>', '<nop>')
 
 -- Fast Fast Fast
 map('n', '<leader>s', ':w<CR>')
-map('n', '<leader>q', ':wq!<CR>')
-map('n', '<S-q>', ':q!<CR>')
+map('n', '<leader>q', ':q!<CR>')
+map('n', '<S-q>', ':wq!<CR>')
 -- Scroll to 10
-map("n", "<C-d", "5j", { noremap = true, silent = true })
+map("n", "<C-d>", "5j", { noremap = true, silent = true })
 map("n", "<C-u>", "5k", { noremap = true, silent = true })
 
 -- Disable search highlight

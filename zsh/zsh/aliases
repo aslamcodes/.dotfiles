@@ -71,7 +71,10 @@ alias ds='cd $HOME/projects/greenway/iac/dirserv'
 alias root='cd $HOME/projects/'
 alias gw='cd $HOME/projects/greenway'
 alias poc='cd $HOME/projects/poc'
+alias notes='cd $HOME/projects/notes && nvim .'
 
 alias mv='mv -v'
 
 alias todo='(cd $HOME/projects && ff todo.md) | xargs nvim'
+
+alias s3browse='docker run --rm -it -v ~/.aws:/root/.aws:ro plazzari/s3-fuzzy-viewer:latest'

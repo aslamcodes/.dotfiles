@@ -9,3 +9,5 @@
 - [ ] Setup a Startup Screen
 - [ ] Readonly nvim
 - [ ] Sessioniser like thing to switch between projects, with active buffers
+- [ ] The replace and clipboard changes issue
+- [ ] Scroll bar support, probably mini-map

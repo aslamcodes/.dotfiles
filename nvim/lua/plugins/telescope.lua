@@ -4,6 +4,7 @@ return {
     cmd = "Telescope", -- Load only when `:Telescope` is used
     keys = {           -- Load on key press
         { "<leader>ff", function() require("telescope.builtin").find_files({ hidden = true }) end,                                                 desc = "Find Files" },
+        { "<leader>fr", function() require("telescope.builtin").resume({ hidden = true }) end,                                                     desc = "Resume Search" },
         { "<leader>fg", function() require("telescope.builtin").live_grep() end,                                                                   desc = "Live Grep" },
         { "<leader>fb", function() require("telescope.builtin").buffers() end,                                                                     desc = "Find Buffers" },
         { "<leader>fh", function() require("telescope.builtin").help_tags() end,                                                                   desc = "Help Tags" },

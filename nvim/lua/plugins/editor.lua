@@ -65,20 +65,10 @@ return {
     {
         'lewis6991/gitsigns.nvim',
         config = function()
-            require('gitsigns').setup()
-        end
-    },
-    {
-        'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
-        lazy = false,
-        config = function()
-            require('lualine').setup({
-                options = {
-                    icons_enabled = true,
-                    theme = "iceberg_dark"
-                }
-            })
+            require('gitsigns').setup(
+                {
+                    current_line_blame = true,
+                })
         end
     },
     {
