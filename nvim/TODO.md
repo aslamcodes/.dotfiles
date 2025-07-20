@@ -1,10 +1,6 @@
 - [x] Open file on tree with a keystroke
-- [ ] Alias for greenway ammend and commit
-- [ ] Code folding on nvim 
 - [x] Telescope and git integration
-- [ ] Setup default micros
 - [x] Path Intellelicense
-- [ ] Setup a Startup Screen
 - [x] Readonly nvim -R
-- [ ] The replace and clipboard changes issue
+- [ ] The replace and clipboard changes issue, refer primeagen
 - [x] Scroll bar support, probably mini-map

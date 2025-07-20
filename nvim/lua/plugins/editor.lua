@@ -1,5 +1,19 @@
 return {
     {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        config = function()
+            require('lualine').setup()
+        end
+    },
+    {
+        "EdenEast/nightfox.nvim",
+        config = function()
+            vim.cmd("colorscheme nightfox")
+        end
+
+    },
+    {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
         opts = {
@@ -60,9 +74,6 @@ return {
         },
         config = function()
             require('nvim-tree').setup({
-                view = {
-                    auto_resize = true
-                },
                 update_focused_file = {
                     enable = true,
                 },
